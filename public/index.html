@@ -8,7 +8,8 @@
 <body>
     <!-- react-dom.development.js -->
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js" crossorigin></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js" crossorigin></script>
+    <%  htmlWebpackPlugin.options.CDN_LIST.forEach(function(item){ %>
+            <script type="text/javascript" src="<%= item %>"></script>
+    <% }) %>
 </body>
 </html>

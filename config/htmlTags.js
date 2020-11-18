@@ -1,38 +1,54 @@
-//cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js" 
-// <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js
-
-
-
-
 const url = require('url')
 
-const version = {
-  production:'.production.min.js',
-  development: '.development.js'
+
+
+
+
+function urlJoin(...urlString) {
+  return url.resolve(...urlString)
 }
 
-const tagBaseUrl = 'https://cdn.jsdelivr.net'
-
-const tagUrl = [
-  '/npm/react-dom@17.0.1/umd/react-dom',
-  '/npm/react@17.0.1/umd/react'
-]
-
-function urlJoin(...urlString){
-  return  urlString.reduce((memo,cur,index)=>{
-
-    if(cur.startsWith('.')){
-      memo+=cur
-    }else {
-            
-    }
-  },'')
+const verInfo = {
+  development:{
+    // 开头
+    base:'http://localhost:5000/',
+  
+    // 结尾
+    end:'.development.js'
+  },
+  production: {
+    base:'https://cdn.jsdelivr.net/',
+    end:'.production.min.js'
+  },
+ 
 }
 
-function getTags (ver){
-  return tagUrl.map(url=>{
-    return urlJoin(tagBaseUrl,url,version[ver])
+function getHtmlTags(ver = 'production') {
+  // console.log(ver)
+  // 中间
+  const tagUrl = [
+    '/npm/react@17.0.1/umd/react',
+    '/npm/react-dom@17.0.1/umd/react-dom',
+  
+  ];
+
+
+
+  return tagUrl.map(url => {
+    const curVersion = verInfo[ver]
+    return urlJoin(curVersion['base'],url) + curVersion['end']
   })
 
 }
-getTags('production')
+
+function getCdnBaseUrl(ver = 'production'){
+  return verInfo[ver]['base']
+}
+
+
+
+module.exports = {
+  getHtmlTags,
+  getCdnBaseUrl
+}
+// console.log(getHtmlTags('production'))
