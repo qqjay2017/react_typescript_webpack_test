@@ -8,6 +8,8 @@ $ npm init
 
 ##  git规范和changelog
 
+编写指南  > http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html
+
  - `commitizen`是一个格式化commit message的工具
  - `validate-commit-msg` 用于检查项目的 Commit message 是否符合格式
  - `conventional-changelog-cli`可以从git metadata生成变更日志

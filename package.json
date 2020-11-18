@@ -1,10 +1,10 @@
 {
   "name": "react_typescript_webpack_cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "commit":"git cz",
+    "commit": "git cz",
     "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,9 +20,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "conventional-changelog-angular": "^5.0.12",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.0",
     "validate-commit-msg": "^2.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qqjay2017/react_typescript_webpack_test"
   },
   "config": {
     "commitizen": {
