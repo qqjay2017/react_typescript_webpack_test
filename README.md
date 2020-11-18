@@ -97,8 +97,8 @@ ci	CI 配置，脚本文件等更新
 
 安装依赖
 
-react系列
-` $ npm i react react-dom @types/react @types/react-dom react-router-dom @types/react-router-dom   -S`
+react系列,用`externals`的形式引用
+` $ npm i react react-dom @types/react @types/react-dom react-router-dom @types/react-router-dom   -S  -D`
 
 webpack系列
 ` $ npm i webpack webpack-cli webpack-dev-server html-webpack-plugin hoist-non-react-statics -D`
@@ -136,6 +136,33 @@ redux系列
 }
 ```
 
+#### 后面修改的ts配置
+
+为导入内容创建命名空间,实现CommonJS和ES模块之间的互相访问,支持`import React from 'react'`
+`"esModuleInterop": true,`
+
+#### 支持ie11
+
+package.json
+```json
+"browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+```
+
+支持<11版本ie
+
+> https://zh-hans.reactjs.org/docs/javascript-environment-requirements.html
+
 #### 支持eslint
 
 安装依赖
@@ -172,6 +199,20 @@ package.json
 #### 配置vscode自动修复
 
 .vscode\settings.json
+
+```js
+{
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
+```
 
 
 ## 单元测试

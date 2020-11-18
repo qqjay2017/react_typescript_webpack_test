@@ -3,8 +3,8 @@ import * as ReactDOM from "react-dom";
 
 const root = document.getElementById("root");
 
+import App from './App'
 
 
-let props = { className: "title" };
-let element = React.createElement("div", props, "hello");
+let element = <App />;
 ReactDOM.render(element, root);
