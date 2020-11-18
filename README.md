@@ -84,5 +84,5 @@ ci	CI 配置，脚本文件等更新
 
 依赖安装
 
-`$ npm i conventional-changelog-cli -D`
+`$ npm install -g conventional-changelog-cli`
 

@@ -1,6 +1,6 @@
 {
   "name": "react_typescript_webpack_cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "^4.2.2",
-    "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.0",
     "validate-commit-msg": "^2.14.0"
