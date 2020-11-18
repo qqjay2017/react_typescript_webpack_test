@@ -174,5 +174,15 @@ package.json
 .vscode\settings.json
 
 
+## 单元测试
+
+安装依赖
+
+`npm i jest @types/jest ts-jest -D`
+
+生成jest config
+
+`npx ts-jest config:init`
+
 
 
