@@ -135,3 +135,44 @@ redux系列
   ]
 }
 ```
+
+#### 支持eslint
+
+安装依赖
+
+`$ npm i eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
+
+.eslintrc.js
+
+```js
+module.exports = {
+    "parser":"@typescript-eslint/parser",
+    "plugins":["@typescript-eslint"],
+    "rules":{
+        "no-var":"error",
+        "no-extra-semi":"error",
+        "@typescript-eslint/indent":["error",2]
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "modules": true
+        }
+    }
+}
+```
+
+package.json
+```
+"lint": "eslint src --ext .tsx",
+"lint:fix": "eslint src --ext .tsx --fix"
+```
+
+#### 配置vscode自动修复
+
+.vscode\settings.json
+
+
+
+

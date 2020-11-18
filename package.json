@@ -9,7 +9,8 @@
     "ins": "npm install -g conventional-changelog-cli commitizen typescript",
     "commit": "git cz",
     "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src --ext .tsx",
+    "lint:fix": "eslint src --ext .tsx --fix"
   },
   "husky": {
     "hooks": {
@@ -23,8 +24,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
     "conventional-changelog-angular": "^5.0.12",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.13.0",
     "hoist-non-react-statics": "^3.3.2",
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
