@@ -20,8 +20,10 @@ $ npm init
 初始化
  `$ commitizen init cz-conventional-changelog --save --save-exact`
 
-提交git
-`$ git cz`
+`$git add -A`
+
+提交git commit
+`$ git cz`,按照提示选择
 
 #### 提交的格式
 
