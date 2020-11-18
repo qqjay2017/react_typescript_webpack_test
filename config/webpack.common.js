@@ -1,24 +1,16 @@
 const webpack = require('webpack')
 const path = require('path');
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = {
-  // mode: 'development',
   entry: './src/index.tsx',
   output: {
     filename: "[name].[hash].js",
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "../dist"),
   },
-  devtool: 'source-map',
-  devServer: {
-    hot: true,
-    contentBase: path.join(__dirname, "dist"),
-    historyApiFallback: {
-      index: "./index.html",
-    },
-  },
+
+ 
 
   resolve: {
     // 引入的默认后缀名,一个个找
@@ -35,12 +27,9 @@ module.exports = {
     }],
   },
   plugins: [
-    // 打包时候才需要clear
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html"
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    
+  
+
   ],
   externals: {
     'react': 'React',

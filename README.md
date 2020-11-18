@@ -214,6 +214,13 @@ package.json
 }
 ```
 
+#### vscode 依赖
+
+`code-runner`   右键可以跑代码
+`code-spell-checker`  拼写检查
+`eslint`            eslint
+`TypeScript Import Sorter`   import自动排序,ctrl + alt + o.
+
 
 ## 单元测试
 
