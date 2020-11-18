@@ -88,3 +88,50 @@ ci	CI 配置，脚本文件等更新
 
 `$ npm install -g conventional-changelog-cli`
 
+
+## 支持Typescript
+
+`tsc --init`
+
+##  支持React
+
+安装依赖
+
+react系列
+` $ npm i react react-dom @types/react @types/react-dom react-router-dom @types/react-router-dom   -S`
+
+webpack系列
+` $ npm i webpack webpack-cli webpack-dev-server html-webpack-plugin hoist-non-react-statics -D`
+
+ts系列
+` $ npm i typescript ts-loader source-map-loader -D`
+
+redux系列
+` $ npm i redux react-redux @types/react-redux redux-thunk  redux-logger @types/redux-logger -S`
+
+
+ tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
+```
